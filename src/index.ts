@@ -13,7 +13,15 @@ const app = express();
 connectDB();
 
 app.use(express.json());
-app.use(cors())
+
+app.use(
+  cors({
+    origin: ["http://localhost:5174"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
 
 app.post("/api/v1/signup", async (req: Request, res: Response): Promise<any> => {
   const username = req.body.username;
