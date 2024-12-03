@@ -201,6 +201,9 @@ app.get("/api/v1/shared-brain/:hash", (req, res) => __awaiter(void 0, void 0, vo
         });
     }
 }));
+app.get("/", (req, res) => {
+    res.send("Server Started");
+});
 app.listen(process.env.PORT || 3000, () => {
     console.log(`Server running on PORT -> ${process.env.PORT}`);
 });
