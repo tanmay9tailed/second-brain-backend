@@ -207,11 +207,6 @@ app.get("/api/v1/shared-brain/:hash", async (req: Request, res: Response): Promi
     });
   }
 });
-
-app.get("/", (req, res) => {
-  res.send("Server Started");
-})
-
 app.listen(process.env.PORT || 3000, () => {
   console.log(`Server running on PORT -> ${process.env.PORT}`);
 });
