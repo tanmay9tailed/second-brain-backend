@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: ["https://second-brain-pied-pi.vercel.app/"],
+    origin: ["https://second-brain-sigma.vercel.app/","https://second-brain-tanmay9taileds-projects.vercel.app/" , "https://second-brain-git-main-tanmay9taileds-projects.vercel.app/"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
