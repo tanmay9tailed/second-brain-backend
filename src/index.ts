@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import connectDB from "./db";
 import dotenv from "dotenv";
-import cors from "cors"
+import cors from "cors";
 import { ContentModel, LinkModel, UserModel } from "./Schemas/schema";
 import { userMiddleware } from "./Middleware/middleware";
 import { random } from "./utils";
@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: ["http://localhost:5174"],
+    origin: ["https://second-brain-pied-pi.vercel.app/"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
@@ -210,7 +210,7 @@ app.get("/api/v1/shared-brain/:hash", async (req: Request, res: Response): Promi
 
 app.get("/", (req, res) => {
   res.send("Server Started");
-})
+});
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`Server running on PORT -> ${process.env.PORT}`);
